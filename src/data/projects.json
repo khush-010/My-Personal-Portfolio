@@ -4,7 +4,7 @@
     "imageSrc": "projects/project.png",
     "description": "This application serves as a comprehensive solution for managing a medical store's inventory and billing processes. Built using modern web technologies, MedManager streamlines daily operations with features like real-time inventory tracking, billing automation, and customer account management. Its intuitive design and robust backend enable users to handle tasks efficiently, making it an ideal tool for medical store owners and administrators.",
     "skills": [ "Express", "Node", "HTML", "CSS", "JavaScript", "MongoDB" ],
-    "demo": "https://www.medmanager.onrender.com",
+    "demo": "https://medmanager.onrender.com",
     "source": "https://github.com/khush-010/MedManager"
   },
   {
