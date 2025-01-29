@@ -2,7 +2,7 @@
 
 .container {
   color: var(--color-text);
-  margin-top: 79px;
+  margin-top: 2rem;
   margin-left: 10%;
   margin-right: 10%;
 }
@@ -52,7 +52,7 @@
 
 .skill p {
   font-size: 25px;
-  font-family: var(--font-roboto);
+  /* font-family: var(--font-roboto); */
   font-weight: 500;
 }
 
@@ -78,9 +78,6 @@
   width: 50px;
 }
 
-.historyItemDetails {
-  font-family: var(--font-roboto);
-}
 
 .historyItemDetails h3 {
   font-size: 30px;
@@ -105,12 +102,14 @@
     flex-direction: column;
     align-items: center;
     gap: 34px;
+    margin-top: 1rem;
   }
 
   .skills {
     width: 100%;
     flex-direction: row;
     justify-content: center;
+    padding: 2rem;
   }
 
   .history {
