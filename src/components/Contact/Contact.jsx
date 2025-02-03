@@ -14,6 +14,10 @@ export const Contact = () => {
 
       {/* Contact Links Section */}
       <ul className={styles.links}>
+      <li className={styles.link}>
+          <img src={getImageUrl("contact/resume.png")} alt="Resume icon" />
+          <a href="https://drive.google.com/file/d/1AE3JuSEiXAw2LIUBWvvu5MKHjl-p67xf/view?usp=sharing">Resume</a>
+        </li>
         <li className={styles.link}>
           <img src={getImageUrl("contact/emailIcon.png")} alt="Email icon" />
           <a href="mailto:khushdhameliya007@gmail.com">Email</a>
