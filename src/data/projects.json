@@ -3,9 +3,10 @@
     "title": "MedManager",
     "imageSrc": "projects/project.png",
     "description": "This application serves as a comprehensive solution for managing a medical store's inventory and billing processes. Built using modern web technologies, MedManager streamlines daily operations with features like real-time inventory tracking, billing automation, and customer account management. Its intuitive design and robust backend enable users to handle tasks efficiently, making it an ideal tool for medical store owners and administrators.",
-    "skills": [ "Express", "Node", "HTML", "CSS", "JavaScript", "MongoDB" ],
+    "skills": ["Express", "Node", "HTML", "CSS", "JavaScript", "MongoDB"],
     "demo": "https://medmanager.onrender.com",
     "source": "https://github.com/khush-010/MedManager",
+    "source_status": true,
     "status": true
   },
   {
@@ -13,8 +14,18 @@
     "imageSrc": "projects/project.png",
     "description": "QuizMaster is an engaging web application that tests users' knowledge through dynamic quizzes. Built using Python and Django, it features user authentication, email verification, OTP-based password recovery, and random multiple-choice questions. The app tracks user progress, marks questions as attempted, and ranks users with a leaderboard based on scores and signup dates. Admins can add and manage questions to ensure content quality.",
     "skills": ["Python", "Django", "HTML", "CSS", "JavaScript", "PostgreSQL"],
-    "source": "https://github.com/khush-010/Quizz-App ",
+    "source": "https://github.com/khush-010/Quizz-App",
+    "source_status": true,
     "status": false
+  },
+  {
+    "title": "Helper Buddy",
+    "imageSrc": "projects/project.png",
+    "description": "Helper Buddy is a service-based platform connecting users with professionals for home, office, and AC services. Built with Next.js for SEO optimization, the platform features intelligent search filters, a referral and wallet system, real-time notifications, and Razorpay payment integration. A structured admin dashboard enables service management, while an automated job allocation system ensures efficient service delivery.",
+    "skills": ["Next.js", "Node.js", "MongoDB", "Tailwind CSS", "Razorpay API"],
+    "demo": "https://helper-buddy.vercel.app/",
+    "source": "",
+    "source_status": false,
+    "status": true
   }
 ]
-
