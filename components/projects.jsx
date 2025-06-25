@@ -53,7 +53,8 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          // Reduced margin on mobile for better spacing
+          className="text-center mb-12 md:mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Featured <span className="gradient-text">Projects</span>
@@ -63,6 +64,7 @@ export default function Projects() {
           </p>
         </motion.div>
 
+        {/* The grid is already mobile-first (1 column), switching to 2 columns on large screens. This is good. */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {projects.map((project, index) => (
             <motion.div
@@ -71,17 +73,20 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2, duration: 0.8 }}
               viewport={{ once: true }}
+              // The responsive flex directions are preserved as they define the card's structure change.
               className="glass rounded-2xl overflow-hidden hover-lift group flex flex-col md:flex-row lg:flex-col"
             >
-              {/* Image Container */}
-              <div className="relative overflow-hidden md:w-3/5 lg:w-full">
+              {/* Image Container - width logic is sound and preserved */}
+              <div className="relative overflow-hidden md:w-3/5 lg:w-full md:flex-shrink-0">
                 <Image
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
                   width={600}
                   height={350}
-                  className="w-full h-64 md:h-full lg:h-72 object-cover transition-transform duration-500 group-hover:scale-110"
+                  // Responsive height for the image.
+                  className="w-full h-56 sm:h-64 md:h-full lg:h-72 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
+                {/* Overlay and links are good as is */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute top-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <motion.a
@@ -108,13 +113,17 @@ export default function Projects() {
               </div>
 
               {/* Content Container */}
-              <div className="p-6 flex flex-col md:w-3/5 lg:w-full">
-                <h3 className="text-2xl font-bold mb-3 h-8">{project.title}</h3>
-                <p className="text-gray-300 mb-4 leading-relaxed flex-grow h-32">
+              {/* Corrected width for medium screens (2/5 to complement image's 3/5) and ensuring flex behavior */}
+              <div className="p-6 flex flex-col flex-grow md:w-2/5 lg:w-full">
+                {/* Removed fixed height `h-8` to allow title to wrap if needed. */}
+                <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
+                {/* Removed fixed height `h-32` and preserved `flex-grow` to allow this section to expand, pushing the footer down. */}
+                <p className="text-gray-300 mb-4 leading-relaxed flex-grow">
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-6 h-14 items-start">
+                {/* Removed fixed height `h-14` to allow technology tags to wrap naturally. */}
+                <div className="flex flex-wrap gap-2 mb-6">
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
@@ -124,7 +133,8 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
-
+                
+                {/* This button group is already perfectly responsive. */}
                 <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
                   <Button
                     asChild
@@ -160,13 +170,7 @@ export default function Projects() {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          {/* <Button
-            size="lg"
-            variant="outline"
-            className="border-gray-600 text-gray-300 hover:text-white hover:border-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover-lift"
-          >
-            View All Projects
-          </Button> */}
+          {/* Button is commented out, no changes needed */}
         </motion.div>
       </div>
     </section>

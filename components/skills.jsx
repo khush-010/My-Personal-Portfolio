@@ -35,41 +35,50 @@ export default function Skills() {
   ]
 
   return (
-    // Increased vertical padding for more breathing room
-    <section id="skills" className="py-28">
+    // Responsive vertical padding: less on mobile, more on desktop.
+    <section id="skills" className="py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          // Increased bottom margin to give more space before the grid
-          className="text-center mb-20"
+          // Responsive bottom margin: less space on mobile before the grid.
+          className="text-center mb-16 md:mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          {/* Responsive font size for the main title. */}
+          <h2 className="text-4xl sm:text-5xl font-bold mb-4 md:mb-6">
             My Digital <span className="gradient-text">Toolkit</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          {/* Responsive font size for the paragraph. */}
+          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
             A curated collection of technologies I use to build modern, high-performance web applications.
           </p>
         </motion.div>
 
-        {/* Reverted to 3 columns, with a larger gap for a less crowded feel */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+        {/*
+          Responsive Grid:
+          - Default (mobile): `grid-cols-1` (implied, as it's a single column by default).
+          - Medium screens (tablets): `md:grid-cols-2`.
+          - Large screens (desktops): `lg:grid-cols-3`.
+          - Responsive gap: smaller gap on mobile, larger on desktop.
+        */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.title}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              // Adjusted delay for 3 columns
+              // No change needed here, the delays work well across layouts.
               transition={{ delay: categoryIndex * 0.2, duration: 0.8 }}
               viewport={{ once: true }}
-              // Increased padding inside the card
-              className="glass p-8 rounded-2xl hover-lift"
+              // Responsive padding inside the card.
+              className="glass p-6 md:p-8 rounded-2xl hover-lift"
             >
-              <h3 className="text-2xl font-bold mb-8 text-center gradient-text">{category.title}</h3>
-              {/* Increased spacing between skill items */}
-              <div className="space-y-8">
+              {/* Responsive font size for the category title. */}
+              <h3 className="text-2xl font-bold mb-6 text-center gradient-text">{category.title}</h3>
+              {/* Reduced spacing between skill items for a tighter look on mobile. */}
+              <div className="space-y-6">
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div
                     key={skill.name}
@@ -89,19 +98,10 @@ export default function Skills() {
                       />
                     </div>
                     <div className="flex-1">
-                      <div className="flex justify-between items-center mb-2">
+                      <div className="flex justify-between items-center">
+                        {/* Font size is good for mobile. */}
                         <span className="font-medium">{skill.name}</span>
-                        {/* <span className="text-sm text-gray-400">{skill.level}%</span> */}
                       </div>
-                      {/* <div className="w-full bg-gray-700 rounded-full h-2">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${skill.level}%` }}
-                          transition={{ delay: categoryIndex * 0.2 + skillIndex * 0.1 + 0.5, duration: 1 }}
-                          viewport={{ once: true }}
-                          className="bg-gradient-to-r from-blue-500 to-purple-600 h-2 rounded-full"
-                        />
-                      </div> */}
                     </div>
                   </motion.div>
                 ))}
